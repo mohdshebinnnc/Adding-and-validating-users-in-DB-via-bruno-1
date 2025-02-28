@@ -1,5 +1,4 @@
 const express = require('express');
-const { resolve } = require('path');
 const mongoose=require("mongoose")
 const bcrypt=require("bcrypt")
 
@@ -15,9 +14,6 @@ mongoose.connect("mongodb+srv://mohammedshebinc92:5zU3VGl55Wr9xw9r@cluster0.enuv
 .then(() => console.log("MongoDB connected"))
 .catch(err => console.error("MongoDB connection error:", err));
 
-app.get('/', (req, res) => {
-  res.sendFile(resolve(__dirname, 'pages/index.html'));
-});
 
 app.get('/register', async(req, res) => {
   try {
