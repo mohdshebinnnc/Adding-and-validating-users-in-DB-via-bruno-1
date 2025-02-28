@@ -8,7 +8,7 @@ const app = express();
 const port = 3010;
 app.use(express.json());
 
-mongoose.connect("mongodb://localhost:27017/marketplace", {
+mongoose.connect("mongodb+srv://mohammedshebinc92:5zU3VGl55Wr9xw9r@cluster0.enuvl.mongodb.net/login", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -19,7 +19,16 @@ app.get('/', (req, res) => {
   res.sendFile(resolve(__dirname, 'pages/index.html'));
 });
 
-
+app.get('/register', async(req, res) => {
+  try {
+    const product = await User.find();
+    res.send({ "message": "Successfully retrieved the data from the database"});
+    console.log(product)
+} catch (error) {
+    console.error(error); 
+    res.status(500).send({ "Error-message": "Failed to retrieve products" });
+}
+});
 
 app.post("/register",async(req,res)=>{
   const { username, email, password } = req.body;
