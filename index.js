@@ -7,7 +7,7 @@ const app = express();
 const port = 3010;
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://mohammedshebinc92:5zU3VGl55Wr9xw9r@cluster0.enuvl.mongodb.net/login", {
+mongoose.connect("mongodb+srv://mohammed782:nhdbefqebawhsJBCkndejhijhbkjr@cluster0.enuvl.mongodb.net/login", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
